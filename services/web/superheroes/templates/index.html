@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul>
+    {% for hero in superheroes %}
+        <li>{{ hero.id }} {{ hero.name }} with power {{ hero.power }} {{ hero.is_villain | is_villain }}</li>
+    {% endfor %}
+</ul>
+<ul>
+    {% for chronc in chronicles %}
+        <li>Hero with id {{ chronc.hero_id }} {{ chronc.text | lower}} in {{ chronc.year }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
