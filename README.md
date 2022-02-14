@@ -14,7 +14,7 @@ Uses the default Flask development server.
 
 - Build the images and run the containers:
 
-    `$ docker-compose up -d --build`
+    `docker-compose up -d --build`
 
 - Test it out at http://localhost:5000. 
 
@@ -22,13 +22,19 @@ Uses the default Flask development server.
 
 Uses gunicorn + nginx.
 
+- If you ran the project in development mode before, run command:
+
+  `docker-compose down -v`
+
+
 - Build the images and run the containers:
 
-  `$ docker-compose -f docker-compose.prod.yml up -d --build`
+  `docker-compose -f docker-compose.prod.yml up -d --build`
 
 - Create database schema: 
 
   `docker-compose exec web python manage.py create_db`
+
 - Fill database by default data: 
   
   `docker-compose exec web python manage.py seed_db`
